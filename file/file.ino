@@ -10,11 +10,12 @@ EthernetClient client;
 void setup ()
 {
   Ethernet.begin (mac);
+  Serial.begin (9600);
 }
 
 void loop ()
 {
-  
+  Serial.println(GetData ());
 }
 
 int GetData ()
