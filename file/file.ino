@@ -15,7 +15,9 @@ void setup ()
 
 void loop ()
 {
-  Serial.println(GetData ());
+//  Serial.println(GetData ());
+  GetData();
+  Serial.print("test");
 }
 
 int GetData ()
@@ -30,6 +32,8 @@ int GetData ()
 
   sym = client.read();
 
+  Serial.print (sym);
+
   while(sym != -1)
   {
      res *= 10;
@@ -37,6 +41,8 @@ int GetData ()
      res += sym - '0';
 
      sym = client.read();
+
+     Serial.print (sym);
   }
 
   return res;
